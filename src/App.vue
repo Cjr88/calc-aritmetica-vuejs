@@ -1,4 +1,44 @@
-<!-- eslint-disable vue/require-v-for-key -->
+<script setup>
+  import { reactive } from 'vue';
+
+ 
+  const  estado = reactive({ 
+    calculos: 
+    [
+    {
+      numero1: '',
+      numero2: '',
+      // titulo: 'Mutiplicação:',
+      // calcularMultiplicacao:  numero1 * numero2, 
+    },
+    // {
+    //   titulo: 'Subtração:',
+    //   // calcularSubtracao: numero1 - numero2,
+    // },
+    // {
+    //   titulo: 'Divisão:',
+    //   // calcularDivisao: numero1 / numero2,
+    // },
+    ]
+  })
+  function calcularMultiplicacao() {
+const { numero1, numero2 } = estado;
+  return Number (numero1) * Number (numero2);
+}
+function calcularSubtracao(){
+const { numero1, numero2 } = estado;
+return Number (numero1) - Number (numero2);
+}
+function calcularDivisao(){
+const { numero1, numero2 } = estado;
+return Number (numero1) / Number (numero2);
+}
+function calcularAdicao(){
+const { numero1, numero2 } = estado;
+return Number (numero1) + Number (numero2);
+}
+</script>
+
 <template>
   <div class="container">
     <header class="p-5">
@@ -32,53 +72,12 @@
         </label>
       </li>
     </ul> -->
-          Multiplicação: {{ calcularMultiplicacao() }} <br>
-          Subtração: {{ calcularSubtracao() }} <br>
-          Divisão: {{ calcularDivisao() }} <br>
-          Adição: {{ calcularAdicao() }} <br>
+          Multiplicação: {{ calcularMultiplicacao() || 0 }} <br>
+          Subtração: {{ calcularSubtracao() || 0 }} <br>
+          Divisão: {{ calcularDivisao() || 0 }} <br>
+          Adição: {{ calcularAdicao() || 0 }} <br>
   </div>
 </template>
-
-<script setup>
-  import { reactive } from 'vue';
-
- 
-  const  estado = reactive({ 
-    calculos: 
-    [
-    {
-      numero1: '',
-      numero2: '',
-      // titulo: 'Mutiplicação:',
-      // calcularMultiplicacao:  numero1 * numero2, 
-    },
-    // {
-    //   titulo: 'Subtração:',
-    //   // calcularSubtracao: numero1 - numero2,
-    // },
-    // {
-    //   titulo: 'Divisão:',
-    //   // calcularDivisao: numero1 / numero2,
-    // },
-    ]
-  })
-  function calcularMultiplicacao(){
-const { numero1, numero2 } = estado;
-  return numero1 * numero2;
-}
-function calcularSubtracao(){
-const { numero1, numero2 } = estado;
-  return numero1 - numero2;
-}
-function calcularDivisao(){
-const { numero1, numero2 } = estado;
-  return numero1 / numero2;
-}
-function calcularAdicao(){
-const { numero1, numero2 } = estado;
-  return parseInt(numero1) + parseInt(numero2);
-}
-</script>
 
 <style>
 .container {
