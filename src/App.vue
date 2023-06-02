@@ -81,12 +81,17 @@ return Number (numero1) + Number (numero2);
 
 <style>
 .container {
-  width: 320px;
+  width: 100%;
   text-align: center;
   color: brown;
   font-size: 26px;
 }h1{
   letter-spacing: 11px;
-  
 }
+/* @media screen and (min-width:769px) and (max-width:1024px){
+   .container{
+    width: 100%;
+   }
+
+} */
 </style>
